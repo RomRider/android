@@ -4,10 +4,4 @@
     "key" : "useMobileWebClient",
     "value" : true
   } ]
-}, {
-  "patchName" : "Change version code",
-  "options" : [ {
-    "key" : "versionCode",
-    "value" : "2147483647"
-  } ]
 }]

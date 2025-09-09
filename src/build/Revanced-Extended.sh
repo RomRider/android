@@ -2,8 +2,6 @@
 # Revanced Extended build
 source src/build/utils.sh
 
-set -x
-
 # Download requirements
 dl_gh "revanced-patches revanced-cli" "inotia00" "latest"
 
