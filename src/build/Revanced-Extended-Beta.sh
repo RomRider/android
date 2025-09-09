@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/bash -x
+
 # Revanced Extended build
 source src/build/utils.sh
 
