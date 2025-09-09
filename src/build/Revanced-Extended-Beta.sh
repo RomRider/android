@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -x
-
 # Revanced Extended build
 source src/build/utils.sh
 
