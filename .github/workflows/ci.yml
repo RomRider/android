@@ -97,7 +97,7 @@ jobs:
           retry_count: ${{ github.event.inputs.retry_count }}
           max_retries: 3
     outputs:
-      # check_rv: ${{ steps.check-rv.outputs.new_patch }}
+      check_rv: ${{ steps.check-rv.outputs.new_patch }}
       # check_rv_beta: ${{ steps.check-rv-beta.outputs.new_patch }}
       # check_spotjfy: ${{ steps.check-spotjfy.outputs.new_patch }}
       # check_rve_anddea_stable: ${{ steps.check-rve-anddea-stable.outputs.new_patch }}
