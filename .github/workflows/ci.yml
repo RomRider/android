@@ -21,10 +21,10 @@ jobs:
       - name: Check github connection
         id: check-gh
         run: bash src/etc/connection.sh
-      # - name: Check new patch ReVanced
-      #   id: check-rv
-      #   if: steps.check-gh.outputs.internet_error == '0'
-      #   run: bash src/etc/ci.sh ReVanced/revanced-patches latest youtube-revanced.apk
+      - name: Check new patch ReVanced
+        id: check-rv
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh ReVanced/revanced-patches latest youtube-revanced.apk
       # - name: Check new patch ReVanced Beta
       #   id: check-rv-beta
       #   if: steps.check-gh.outputs.internet_error == '0'
@@ -111,13 +111,13 @@ jobs:
       # check_BiliRoamingM: ${{ steps.check-BiliRoamingM.outputs.new_patch }}
       # check_Revanced_Experiments: ${{ steps.check-Revanced-Experiments.outputs.new_patch }}
 
-  # Patch-Revanced:
-  #   name: Patch Revanced Stable
-  #   needs: check
-  #   if: ${{ needs.check.outputs.check_rv == 1 }}
-  #   uses: ./.github/workflows/manual-patch.yml
-  #   with:
-  #     org: "Revanced"
+  Patch-Revanced:
+    name: Patch Revanced Stable
+    needs: check
+    if: ${{ needs.check.outputs.check_rv == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    with:
+      org: "Revanced"
   # Patch-Revanced-Beta:
   #   name: Patch Revanced Beta
   #   needs: check

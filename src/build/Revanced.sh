@@ -13,21 +13,21 @@ revanced_dl(){
 	split_editor "youtube" "youtube"
 	patch "youtube" "revanced"
 	# Patch Youtube Arm64-v8a
-	get_patches_key "youtube-revanced" 
+	get_patches_key "youtube-revanced"
 	split_editor "youtube" "youtube-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
 	patch "youtube-arm64-v8a" "revanced"
 	# Patch Youtube Armeabi-v7a
-	get_patches_key "youtube-revanced" 
-	split_editor "youtube" "youtube-armeabi-v7a" "exclude" "split_config.arm64_v8a split_config.x86 split_config.x86_64"
-	patch "youtube-armeabi-v7a" "revanced"
-	# Patch Youtube x86
-	get_patches_key "youtube-revanced" 
-	split_editor "youtube" "youtube-x86" "exclude" "split_config.arm64_v8a split_config.armeabi_v7a split_config.x86_64"
-	patch "youtube-x86" "revanced"
-	# Patch Youtube x86_64
-	get_patches_key "youtube-revanced" 
-	split_editor "youtube" "youtube-x86_64" "exclude" "split_config.arm64_v8a split_config.armeabi_v7a split_config.x86"
-	patch "youtube-x86_64" "revanced"
+	# get_patches_key "youtube-revanced"
+	# split_editor "youtube" "youtube-armeabi-v7a" "exclude" "split_config.arm64_v8a split_config.x86 split_config.x86_64"
+	# patch "youtube-armeabi-v7a" "revanced"
+	# # Patch Youtube x86
+	# get_patches_key "youtube-revanced"
+	# split_editor "youtube" "youtube-x86" "exclude" "split_config.arm64_v8a split_config.armeabi_v7a split_config.x86_64"
+	# patch "youtube-x86" "revanced"
+	# # Patch Youtube x86_64
+	# get_patches_key "youtube-revanced"
+	# split_editor "youtube" "youtube-x86_64" "exclude" "split_config.arm64_v8a split_config.armeabi_v7a split_config.x86"
+	# patch "youtube-x86_64" "revanced"
 }
 2() {
 	revanced_dl
