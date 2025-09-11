@@ -44,7 +44,7 @@ jobs:
       - name: Check new patch Revanced Extended
         id: check-rve
         if: steps.check-gh.outputs.internet_error == '0'
-        run: bash src/etc/ci.sh inotia00/revanced-patches latest youtube-revanced-extended.apk
+        run: bash src/etc/ci.sh inotia00/revanced-patches latest reddit-revanced-extended.apk
       # - name: Check new patch Revanced Extended Beta
       #   id: check-rve-beta
       #   if: steps.check-gh.outputs.internet_error == '0'
