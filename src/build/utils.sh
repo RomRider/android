@@ -104,34 +104,21 @@ get_patches_key() {
 	includeLinesFound=false
  	sed -i 's/\r$//' src/patches/$1/include-patches
 	sed -i 's/\r$//' src/patches/$1/exclude-patches
-	if [[ $(ls revanced-cli-*.jar) =~ revanced-cli-([0-9]+) ]] || [[ $(ls morphe-cli-*.jar) =~ morphe-cli-([0-9]+) ]]; then
-		num=${BASH_REMATCH[1]}
-		if [ $num -ge 5 ]; then
-			while IFS= read -r line1; do
-				excludePatches+=" -d \"$line1\""
-				excludeLinesFound=true
-			done < src/patches/$1/exclude-patches
-			while IFS= read -r line2; do
-				if [[ "$line2" == *"|"* ]]; then
-					patch_name="${line2%%|*}"
-					options="${line2#*|}"
-					includePatches+=" -e \"${patch_name}\" ${options}"
-				else
-					includePatches+=" -e \"$line2\""
-				fi
-				includeLinesFound=true
-			done < src/patches/$1/include-patches
-		else
-			while IFS= read -r line1; do
-				excludePatches+=" -e \"$line1\""
-				excludeLinesFound=true
-			done < src/patches/$1/exclude-patches
-
-			while IFS= read -r line2; do
-				includePatches+=" -i \"$line2\""
-				includeLinesFound=true
-			done < src/patches/$1/include-patches
-		fi
+	if [[ $(ls morphe-cli-*.jar) =~ morphe-cli-([0-9]+) ]]; then
+		while IFS= read -r line1; do
+			excludePatches+=" -d \"$line1\""
+			excludeLinesFound=true
+		done < src/patches/$1/exclude-patches
+		while IFS= read -r line2; do
+			if [[ "$line2" == *"|"* ]]; then
+				patch_name="${line2%%|*}"
+				options="${line2#*|}"
+				includePatches+=" -e \"${patch_name}\" ${options}"
+			else
+				includePatches+=" -e \"$line2\""
+			fi
+			includeLinesFound=true
+		done < src/patches/$1/include-patches
 	fi
 	if [ "$excludeLinesFound" = false ]; then
 		excludePatches=""
