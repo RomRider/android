@@ -104,7 +104,7 @@ get_patches_key() {
 	includeLinesFound=false
  	sed -i 's/\r$//' src/patches/$1/include-patches
 	sed -i 's/\r$//' src/patches/$1/exclude-patches
-	if [[ $(ls revanced-cli-*.jar) =~ revanced-cli-([0-9]+) ]]; then
+	if [[ $(ls revanced-cli-*.jar) =~ revanced-cli-([0-9]+) ]] || [[ $(ls morphe-cli-*.jar) =~ morphe-cli-([0-9]+) ]]; then
 		num=${BASH_REMATCH[1]}
 		if [ $num -ge 5 ]; then
 			while IFS= read -r line1; do
